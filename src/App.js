@@ -5,9 +5,9 @@ import  Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      { name: 'Alex', age: 38 },
-      { name: 'Bob', age: 18 },
-      { name: 'John', age: 25 }
+      { id: 'kjlkjh', name: 'Alex', age: 38 },
+      { id: 'kjhljh', name: 'Bob', age: 18 },
+      { id: 'jhlkjh', name: 'John', age: 25 }
     ],
     showPersons: false
   }
@@ -36,7 +36,7 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'gold',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -52,7 +52,8 @@ class App extends Component {
             return <Person
               click={() => this.deletePersonHandler(index)}
               name={person.name}
-              age={person.age} />
+              age={person.age}
+              key={person.id} />
           })}
         </div>
       );
@@ -73,4 +74,3 @@ class App extends Component {
 }
 
 export default App;
-
